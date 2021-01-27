@@ -54,7 +54,7 @@ class FastAfProducts extends StatelessWidget {
           ),
         ),
         SpacerHeight(
-          size: 90,
+          size: 50,
         )
       ],
     );

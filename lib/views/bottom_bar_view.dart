@@ -18,8 +18,8 @@ class _BottomBarViewState extends State<BottomBarView> {
   final List<Widget> mPages = [
     HomePageView(),
     SearchPageView(),
-    ShoppingBagPageView(),
     OrderPageView(),
+    ShoppingBagPageView(),
     AccountPageView()
   ];
 

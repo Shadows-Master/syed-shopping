@@ -33,22 +33,22 @@ class FitnessProducts extends StatelessWidget {
             shrinkWrap: true,
             children: [
               ProductCard(
-                productImage: 'assets/images/nappers.jpg',
-                productLabel: 'BEARABY',
-                productName: 'Cotton Napper',
-                productAmount: '249.00',
-              ),
-              ProductCard(
-                productLabel: 'PARACHUTE',
-                productName: 'Waffle Robe',
-                productImage: 'assets/images/robe.jpg',
-                productAmount: '119.00',
-              ),
-              ProductCard(
-                productLabel: 'KITCHEN',
-                productName: 'Waffle Kitchen',
-                productImage: 'assets/images/waffle.jpg',
+                productLabel: 'DUMBELL',
+                productName: 'Dumbells',
+                productImage: 'assets/images/dumbell.jpg',
                 productAmount: '59.99',
+              ),
+              ProductCard(
+                productImage: 'assets/images/yoga.jpg',
+                productLabel: 'ALO',
+                productName: 'Uplifting Yoga Block',
+                productAmount: '24.00',
+              ),
+              ProductCard(
+                productLabel: 'HIGHER DOSE',
+                productName: 'Infrared Sauna Blanket V3',
+                productImage: 'assets/images/sauna.jpg',
+                productAmount: '499.00',
               ),
             ],
           ),

@@ -51,7 +51,7 @@ class HolidaysProducts extends StatelessWidget {
           ),
         ),
         SpacerHeight(
-          size: 90,
+          size: 50,
         )
       ],
     );

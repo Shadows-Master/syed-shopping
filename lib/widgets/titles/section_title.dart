@@ -9,14 +9,14 @@ class HomeSectionTitle extends StatelessWidget {
     this.title,
     this.subTitle,
     this.route,
-    this.isInlinePager = false,
     this.pageController,
+    this.mPageIndex = 1,
   }) : super(key: key);
 
   final String title;
   final String subTitle;
   final String route;
-  final bool isInlinePager;
+  final int mPageIndex;
   final PageController pageController;
 
   @override
@@ -37,7 +37,7 @@ class HomeSectionTitle extends StatelessWidget {
           InkWell(
             onTap: () {
               if (pageController != null) {
-                pageController.jumpToPage(1);
+                pageController.jumpToPage(mPageIndex);
               } else {
                 Navigator.of(context).pushNamed(route ?? '');
               }

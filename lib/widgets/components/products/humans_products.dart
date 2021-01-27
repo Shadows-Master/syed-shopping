@@ -33,28 +33,28 @@ class HumansProducts extends StatelessWidget {
             shrinkWrap: true,
             children: [
               ProductCard(
-                productImage: 'assets/images/nappers.jpg',
-                productLabel: 'BEARABY',
-                productName: 'Cotton Napper',
-                productAmount: '249.00',
+                productImage: 'assets/images/legging.jpg',
+                productLabel: 'ALO',
+                productName: 'High-Waist Airbrush Legging',
+                productAmount: '82.00',
               ),
               ProductCard(
-                productLabel: 'PARACHUTE',
-                productName: 'Waffle Robe',
-                productImage: 'assets/images/robe.jpg',
-                productAmount: '119.00',
+                productLabel: 'MEJURI',
+                productName: 'Single Colored Mini Hoop',
+                productImage: 'assets/images/hoop.jpg',
+                productAmount: '60.00',
               ),
               ProductCard(
-                productLabel: 'KITCHEN',
-                productName: 'Waffle Kitchen',
-                productImage: 'assets/images/waffle.jpg',
+                productLabel: 'SWEAT',
+                productName: 'Sweat',
+                productImage: 'assets/images/sweat.png',
                 productAmount: '59.99',
               ),
             ],
           ),
         ),
         SpacerHeight(
-          size: 90,
+          size: 50,
         )
       ],
     );

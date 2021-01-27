@@ -54,7 +54,7 @@ class CozyProducts extends StatelessWidget {
           ),
         ),
         SpacerHeight(
-          size: 90,
+          size: 50,
         )
       ],
     );

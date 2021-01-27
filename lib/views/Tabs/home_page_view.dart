@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:syed/views/pages/brand_products_page_view.dart';
-import 'package:syed/views/pages/home_products_page_view.dart';
+import 'file:///E:/FlutterApps/syed/lib/views/pages/homes/brand_products_page_view.dart';
+import 'file:///E:/FlutterApps/syed/lib/views/pages/homes/home_products_page_view.dart';
 
 class HomePageView extends StatefulWidget {
   @override
@@ -24,6 +24,8 @@ class _HomePageViewState extends State<HomePageView> {
       child: Scaffold(
         body: PageView(
           controller: _mPageController,
+          pageSnapping: true,
+          physics: NeverScrollableScrollPhysics(),
           children: [
             HomeProductsPageView(
               mPageController: _mPageController,

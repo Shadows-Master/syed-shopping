@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:syed/helpers/spacer.dart';
-import 'package:syed/widgets/components/categories_components.dart';
 import 'package:syed/widgets/titles/section_title.dart';
 
-class BrandsProducts extends StatelessWidget {
-  const BrandsProducts({
+import '../categories_components.dart';
+
+class CategoriesProducts extends StatelessWidget {
+  const CategoriesProducts({
     Key key,
     this.sectionTitle,
     this.sectionSubTitle,
@@ -14,7 +14,6 @@ class BrandsProducts extends StatelessWidget {
     this.width,
     this.radius,
     this.padding = 40,
-    this.top = 15,
   }) : super(key: key);
 
   final String sectionTitle;
@@ -25,7 +24,6 @@ class BrandsProducts extends StatelessWidget {
   final double width;
   final double radius;
   final double padding;
-  final double top;
 
   @override
   Widget build(BuildContext context) {
@@ -39,63 +37,46 @@ class BrandsProducts extends StatelessWidget {
         ),
         Container(
           height: 140,
-          margin: EdgeInsets.only(top: top),
+          margin: EdgeInsets.only(top: 15),
           child: ListView(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             shrinkWrap: true,
             children: [
               HomeCategories(
-                image: 'assets/images/waffle.jpg',
-                title: 'Activist',
+                title: 'LA Essentials',
+                image: 'assets/images/essentials.jpg',
                 padding: padding,
                 radius: radius,
                 width: width,
                 height: height,
               ),
               HomeCategories(
-                image: 'assets/images/shoes.jpg',
-                title: 'Shoes',
+                image: 'assets/images/care.jpg',
                 padding: padding,
                 radius: radius,
                 width: width,
                 height: height,
               ),
               HomeCategories(
-                image: 'assets/images/bark.png',
-                title: 'Bark',
+                title: 'Health & Wellness',
+                image: 'assets/images/health.jpg',
                 padding: padding,
                 radius: radius,
                 width: width,
                 height: height,
               ),
               HomeCategories(
-                image: 'assets/images/bala.jpeg',
-                title: 'Bala',
+                title: 'Plantry',
+                image: 'assets/images/pantry.jpg',
                 padding: padding,
                 radius: radius,
                 width: width,
                 height: height,
               ),
               HomeCategories(
-                image: 'assets/images/baggu.jpg',
-                title: 'Baggu',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
-              ),
-              HomeCategories(
-                image: 'assets/images/tress.jpg',
-                title: 'Baby Tress',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
-              ),
-              HomeCategories(
-                image: 'assets/images/bros.jpg',
-                title: 'Banana Bros',
+                title: 'Beauty',
+                image: 'assets/images/beauty.jpg',
                 padding: padding,
                 radius: radius,
                 width: width,
