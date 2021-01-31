@@ -36,6 +36,14 @@ class CategoriesList extends StatelessWidget {
             title: 'Beauty',
             image: 'assets/images/beauty.jpg',
           ),
+          HomeCategories(
+            title: 'Electronics',
+            image: 'assets/images/electronics.png',
+          ),
+          HomeCategories(
+            title: 'Home & Living',
+            image: 'assets/images/home.jpeg',
+          ),
         ],
       ),
     );

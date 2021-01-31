@@ -59,6 +59,7 @@ class _SearchBrandPageViewState extends State<SearchBrandPageView> {
                       BrandsProducts(
                         sectionTitle: 'Browse by Brand',
                         width: 160,
+                        isHome: false,
                       ),
                       TopSearchesProducts(
                         sectionTitle: 'Top Searches',

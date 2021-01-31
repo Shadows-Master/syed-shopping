@@ -49,8 +49,8 @@ class ProductCard extends StatelessWidget {
                   productLabel ?? 'VITRUVI',
                   softWrap: true,
                   style: TextStyle(
-                      fontSize: fontSize(size: 15),
-                      fontWeight: FontWeight.w500),
+                      fontSize: fontSize(size: 12),
+                      fontWeight: FontWeight.w600),
                 ),
                 SpacerHeight(size: 1.5),
                 Text(
@@ -67,7 +67,8 @@ class ProductCard extends StatelessWidget {
                   (productAmount != null) ? '\$$productAmount' : '\$150',
                   softWrap: true,
                   style: TextStyle(
-                      fontSize: fontSize(size: 20),
+                      fontSize: fontSize(size: 17),
+                      color: kAccentColor,
                       fontWeight: FontWeight.bold),
                 )
               ],

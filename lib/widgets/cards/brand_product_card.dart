@@ -47,7 +47,7 @@ class BrandProductCard extends StatelessWidget {
             softWrap: true,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: fontSize(size: 17),
+                fontSize: fontSize(size: 18),
                 fontWeight: FontWeight.w800),
           )
         ],
