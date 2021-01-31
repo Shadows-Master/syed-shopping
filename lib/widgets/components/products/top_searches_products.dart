@@ -30,7 +30,7 @@ class TopSearchesProducts extends StatelessWidget {
           Expanded(
             //margin: EdgeInsets.only(top: 25),
             child: Container(
-              margin: EdgeInsets.only(top: 15),
+              margin: EdgeInsets.only(top: 10),
               child: ListView(
                 //physics: NeverScrollableScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: 30),

@@ -1,15 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:syed/helpers/constants.dart';
-import 'package:syed/widgets/components/categories_components.dart';
+import 'package:syed/widgets/cards/brand_product_card.dart';
 
 class BrandProductsPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: Size.fromHeight(70),
         child: AppBar(
           leading: IconButton(
               icon: Icon(
@@ -30,65 +29,43 @@ class BrandProductsPageView extends StatelessWidget {
         ),
       ),
       body: SizedBox(
-        width: double.infinity,
-        child: Container(
+          width: double.infinity,
+          child: Container(
             alignment: Alignment.center,
             margin: EdgeInsets.only(top: 15),
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: GridView.count(
               crossAxisCount: 2,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 15,
               children: [
-                HomeCategories(
-                  image: 'assets/images/waffle.jpg',
-                  title: 'Activist',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
+                BrandProductCard(
+                  mImage: 'assets/images/waffle.jpg',
+                  mTitle: 'Activist',
                 ),
-                HomeCategories(
-                  image: 'assets/images/shoes.jpg',
-                  title: 'Shoes',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
+                BrandProductCard(
+                  mImage: 'assets/images/shoes.jpg',
+                  mTitle: 'Shoes',
                 ),
-                HomeCategories(
-                  image: 'assets/images/bark.png',
-                  title: 'Bark',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
+                BrandProductCard(
+                  mImage: 'assets/images/bark.png',
+                  mTitle: 'Bark',
                 ),
-                HomeCategories(
-                  image: 'assets/images/bala.jpeg',
-                  title: 'Bala',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
+                BrandProductCard(
+                  mImage: 'assets/images/bala.jpeg',
+                  mTitle: 'Bala',
                 ),
-                HomeCategories(
-                  image: 'assets/images/tress.jpg',
-                  title: 'Baby Tress',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
+                BrandProductCard(
+                  mImage: 'assets/images/tress.jpg',
+                  mTitle: 'Baby Tress',
                 ),
-                HomeCategories(
-                  image: 'assets/images/bros.jpg',
-                  title: 'Banana Bros',
-                  radius: 5,
-                  padding: 55,
-                  width: 250,
-                  height: 150,
+                BrandProductCard(
+                  mImage: 'assets/images/bros.jpg',
+                  mTitle: 'Banana Bros',
                 ),
               ],
-            )),
-      ),
+            ),
+          )),
     );
   }
 }

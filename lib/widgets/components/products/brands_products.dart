@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syed/helpers/spacer.dart';
+import 'package:syed/widgets/cards/brand_product_card.dart';
 import 'package:syed/widgets/components/categories_components.dart';
 import 'package:syed/widgets/titles/section_title.dart';
 
@@ -14,7 +15,7 @@ class BrandsProducts extends StatelessWidget {
     this.width,
     this.radius,
     this.padding = 40,
-    this.top = 15,
+    this.top = 13,
   }) : super(key: key);
 
   final String sectionTitle;
@@ -38,68 +39,61 @@ class BrandsProducts extends StatelessWidget {
           pageController: mPageController,
         ),
         Container(
-          height: 140,
-          margin: EdgeInsets.only(top: top),
+          height: 96,
+          margin: EdgeInsets.only(top: top, bottom: 35),
           child: ListView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 10),
             shrinkWrap: true,
             children: [
-              HomeCategories(
-                image: 'assets/images/waffle.jpg',
-                title: 'Activist',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Activist',
+                mImage: 'assets/images/waffle.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                image: 'assets/images/shoes.jpg',
-                title: 'Shoes',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Shoes',
+                mImage: 'assets/images/shoes.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                image: 'assets/images/bark.png',
-                title: 'Bark',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Bark',
+                mImage: 'assets/images/bark.png',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                image: 'assets/images/bala.jpeg',
-                title: 'Bala',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Bala',
+                mImage: 'assets/images/bala.jpeg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                image: 'assets/images/baggu.jpg',
-                title: 'Baggu',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Baggu',
+                mImage: 'assets/images/baggu.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                image: 'assets/images/tress.jpg',
-                title: 'Baby Tress',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Baby Tress',
+                mImage: 'assets/images/tress.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                image: 'assets/images/bros.jpg',
-                title: 'Banana Bros',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Banana Bros',
+                mImage: 'assets/images/bros.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
             ],
           ),

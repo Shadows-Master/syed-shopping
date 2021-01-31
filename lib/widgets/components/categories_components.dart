@@ -10,7 +10,9 @@ class HomeCategories extends StatelessWidget {
     this.width,
     this.radius,
     this.padding,
-    this.vertical = 0,
+    this.mVertical = 0,
+    this.mHorizontal = 5,
+    this.isCircle = true,
   }) : super(key: key);
 
   final String image;
@@ -19,39 +21,47 @@ class HomeCategories extends StatelessWidget {
   final double width;
   final double radius;
   final double padding;
-  final double vertical;
+  final double mVertical;
+  final double mHorizontal;
+  final bool isCircle;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5, vertical: vertical),
+      margin:
+          EdgeInsets.symmetric(horizontal: mHorizontal, vertical: mVertical),
+      height: height ?? 110,
+      width: width ?? 110,
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+            kPrimaryBbnColor.withOpacity(.8),
+            kPrimaryBbnColor.withOpacity(.8)
+          ]),
+          shape: (!isCircle) ? BoxShape.rectangle : BoxShape.circle),
       child: Stack(
+        alignment: Alignment.center,
         children: [
           Opacity(
-            opacity: 0.85,
+            opacity: 0.55,
             child: Container(
-              height: height ?? 100,
-              width: width ?? 100,
+              height: height ?? 110,
+              width: width ?? 110,
               decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(1),
-                  borderRadius: BorderRadius.circular(radius ?? 50),
+                  borderRadius: BorderRadius.circular(radius ?? 55),
                   image: DecorationImage(
                       image: AssetImage(image ?? 'assets/images/health.jpg'),
                       fit: BoxFit.cover)),
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: padding ?? 32.0),
-                child: Text(
-                  title ?? 'Personal Care',
-                  softWrap: true,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: fontSize(size: 16),
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
             ),
           ),
+          Text(
+            title ?? 'Personal Care',
+            softWrap: true,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: fontSize(size: 17),
+                fontWeight: FontWeight.bold),
+          )
         ],
       ),
     );

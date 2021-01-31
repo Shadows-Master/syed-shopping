@@ -31,7 +31,7 @@ class _HomeProductsPageViewState extends State<HomeProductsPageView> {
                   HomePageHeader(),
                   CategoriesList(),
                   HolidaysProducts(),
-                  FastAfProducts(sectionTitle: 'Popular on FastAF'),
+                  FastAfProducts(sectionTitle: 'Popular on Spree'),
                   HealthProducts(
                     sectionTitle: 'Health is Wealth',
                   ),

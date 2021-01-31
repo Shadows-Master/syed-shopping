@@ -36,10 +36,10 @@ class _BottomBarViewState extends State<BottomBarView> {
       body: mPages.elementAt(_mIndex),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _mIndex,
-        backgroundColor: kAccentColor,
+        backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: kPrimaryColor,
+        unselectedItemColor: kPrimaryBbnColor,
         onTap: (index) {
           setState(() {
             _mIndex = index;

@@ -54,17 +54,11 @@ class _SearchBrandPageViewState extends State<SearchBrandPageView> {
                       CategoriesProducts(
                         sectionTitle: 'Browse by Category',
                         mPageController: widget.mPageController,
-                        width: 140,
-                        height: 90,
-                        radius: 8,
-                        padding: 30,
+                        width: 160,
                       ),
                       BrandsProducts(
                         sectionTitle: 'Browse by Brand',
-                        width: 140,
-                        height: 90,
-                        radius: 8,
-                        padding: 30,
+                        width: 160,
                       ),
                       TopSearchesProducts(
                         sectionTitle: 'Top Searches',

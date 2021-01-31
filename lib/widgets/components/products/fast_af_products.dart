@@ -25,11 +25,11 @@ class FastAfProducts extends StatelessWidget {
           route: sectionRoute,
         ),
         Container(
-          height: 360,
-          margin: EdgeInsets.only(top: 25),
+          height: 320,
+          margin: EdgeInsets.only(top: 15),
           child: ListView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 10),
             shrinkWrap: true,
             children: [
               ProductCard(
@@ -54,7 +54,7 @@ class FastAfProducts extends StatelessWidget {
           ),
         ),
         SpacerHeight(
-          size: 50,
+          size: 20,
         )
       ],
     );

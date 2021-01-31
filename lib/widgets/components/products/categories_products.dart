@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:syed/widgets/cards/brand_product_card.dart';
 import 'package:syed/widgets/titles/section_title.dart';
-
-import '../categories_components.dart';
 
 class CategoriesProducts extends StatelessWidget {
   const CategoriesProducts({
@@ -36,51 +35,47 @@ class CategoriesProducts extends StatelessWidget {
           pageController: mPageController,
         ),
         Container(
-          height: 140,
-          margin: EdgeInsets.only(top: 15),
+          height: 96,
+          margin: EdgeInsets.only(top: 13, bottom: 35),
           child: ListView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 10),
             shrinkWrap: true,
             children: [
-              HomeCategories(
-                title: 'LA Essentials',
-                image: 'assets/images/essentials.jpg',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'LA Essentials',
+                mImage: 'assets/images/essentials.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                image: 'assets/images/care.jpg',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Personal Care',
+                mImage: 'assets/images/care.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                title: 'Health & Wellness',
-                image: 'assets/images/health.jpg',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Health & Wellness',
+                mImage: 'assets/images/health.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                title: 'Plantry',
-                image: 'assets/images/pantry.jpg',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Plantry',
+                mImage: 'assets/images/pantry.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
-              HomeCategories(
-                title: 'Beauty',
-                image: 'assets/images/beauty.jpg',
-                padding: padding,
-                radius: radius,
-                width: width,
-                height: height,
+              BrandProductCard(
+                mTitle: 'Beauty',
+                mImage: 'assets/images/beauty.jpg',
+                mWidth: width,
+                mHeight: height,
+                mHorizontal: 8,
               ),
             ],
           ),

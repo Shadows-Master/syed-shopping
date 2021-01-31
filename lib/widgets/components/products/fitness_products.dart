@@ -19,17 +19,20 @@ class FitnessProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SpacerHeight(
+          size: 50,
+        ),
         HomeSectionTitle(
           title: sectionTitle,
           subTitle: sectionSubTitle,
           route: sectionRoute,
         ),
         Container(
-          height: 360,
-          margin: EdgeInsets.only(top: 25),
+          height: 335,
+          margin: EdgeInsets.only(top: 15),
           child: ListView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 10),
             shrinkWrap: true,
             children: [
               ProductCard(
@@ -53,9 +56,6 @@ class FitnessProducts extends StatelessWidget {
             ],
           ),
         ),
-        SpacerHeight(
-          size: 90,
-        )
       ],
     );
   }

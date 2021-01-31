@@ -24,9 +24,9 @@ class HomePageHeader extends StatelessWidget {
                 'Your Shop',
                 softWrap: true,
                 style: TextStyle(
-                    fontSize: fontSize(size: 25),
-                    color: kAccentColor,
-                    fontWeight: FontWeight.w600),
+                    fontSize: fontSize(size: 30),
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
               ),
               Text(
                 'Delivered in 2 hours',

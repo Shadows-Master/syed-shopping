@@ -31,7 +31,7 @@ class HomeSectionTitle extends StatelessWidget {
             softWrap: true,
             style: TextStyle(
                 color: kAccentColor,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w900,
                 fontSize: fontSize(size: 18)),
           ),
           InkWell(

@@ -11,9 +11,9 @@ class CategoriesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 140,
-      margin: EdgeInsets.only(top: 25),
+      margin: EdgeInsets.only(top: 15, bottom: 10),
       child: ListView(
-        padding: EdgeInsets.only(left: 15),
+        padding: EdgeInsets.only(left: 10),
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         children: [

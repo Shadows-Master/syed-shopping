@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:syed/helpers/constants.dart';
+import 'package:syed/widgets/cards/brand_product_card.dart';
 import 'package:syed/widgets/components/categories_components.dart';
 
 class CategoriesProductsPageView extends StatefulWidget {
@@ -47,49 +48,40 @@ class _CategoriesProductsPageViewState
             padding: EdgeInsets.symmetric(horizontal: 50),
             child: ListView(
               children: [
-                HomeCategories(
-                  title: 'LA Essentials',
-                  image: 'assets/images/essentials.jpg',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
-                  vertical: 8,
+                BrandProductCard(
+                  mTitle: 'LA Essentials',
+                  mImage: 'assets/images/essentials.jpg',
+                  mWidth: 250,
+                  mHeight: 150,
+                  mVertical: 8,
                 ),
-                HomeCategories(
-                  image: 'assets/images/care.jpg',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
-                  vertical: 8,
+                BrandProductCard(
+                  mTitle: 'Personal Care',
+                  mImage: 'assets/images/care.jpg',
+                  mWidth: 250,
+                  mHeight: 150,
+                  mVertical: 8,
                 ),
-                HomeCategories(
-                  title: 'Health & Wellness',
-                  image: 'assets/images/health.jpg',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
-                  vertical: 8,
+                BrandProductCard(
+                  mTitle: 'Health & Wellness',
+                  mImage: 'assets/images/health.jpg',
+                  mWidth: 250,
+                  mHeight: 150,
+                  mVertical: 8,
                 ),
-                HomeCategories(
-                  title: 'Plantry',
-                  image: 'assets/images/pantry.jpg',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
-                  vertical: 8,
+                BrandProductCard(
+                  mTitle: 'Plantry',
+                  mImage: 'assets/images/pantry.jpg',
+                  mWidth: 250,
+                  mHeight: 150,
+                  mVertical: 8,
                 ),
-                HomeCategories(
-                  title: 'Beauty',
-                  image: 'assets/images/beauty.jpg',
-                  padding: 55,
-                  radius: 5,
-                  width: 250,
-                  height: 150,
-                  vertical: 8,
+                BrandProductCard(
+                  mTitle: 'Beauty',
+                  mImage: 'assets/images/beauty.jpg',
+                  mWidth: 250,
+                  mHeight: 150,
+                  mVertical: 8,
                 ),
               ],
             )),
