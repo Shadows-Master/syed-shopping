@@ -62,10 +62,10 @@ AppBarTheme appBarTheme() {
     iconTheme: IconThemeData(color: kPrimaryBbnColor, size: 18),
     textTheme: TextTheme(
       headline6: TextStyle(
-          color: kPrimaryBbnColor,
-          fontWeight: FontWeight.w500,
+          color: kAccentColor,
+          fontWeight: FontWeight.w900,
           fontSize: 18,
-          fontFamily: 'Kufam'),
+          fontFamily: GoogleFonts.cantarell().fontFamily),
     ),
   );
 }

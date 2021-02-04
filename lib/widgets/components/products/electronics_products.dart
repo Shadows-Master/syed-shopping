@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syed/helpers/spacer.dart';
+import 'package:syed/screens/electronics_product_details_screen.dart';
 import 'package:syed/widgets/cards/product_card.dart';
 import 'package:syed/widgets/titles/section_title.dart';
 
@@ -35,14 +36,23 @@ class ElectronicsProducts extends StatelessWidget {
               ProductCard(
                 productLabel: 'SONY',
                 productName: 'WH-1000XM4 Wireless Noise-Cancel',
-                productImage: 'assets/images/sony-wh.jpg',
+                productImage: 'assets/images/sony.png',
                 productAmount: '299.99',
               ),
-              ProductCard(
-                productLabel: 'XBOX',
-                productName: 'XBOX Series X Game Console',
-                productImage: 'assets/images/xbox.jpeg',
-                productAmount: '499.99',
+              InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (BuildContext context) =>
+                          ElectronicsProductDetailsScreen());
+                },
+                child: ProductCard(
+                  productLabel: 'XBOX',
+                  productName: 'XBOX Series X Game Console',
+                  productImage: 'assets/images/xbox-preview.png',
+                  productAmount: '499.99',
+                ),
               ),
               ProductCard(
                 productLabel: 'ELECTRONICS',

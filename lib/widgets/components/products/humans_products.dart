@@ -33,7 +33,7 @@ class HumansProducts extends StatelessWidget {
             shrinkWrap: true,
             children: [
               ProductCard(
-                productImage: 'assets/images/legging.jpg',
+                productImage: 'assets/images/legging.png',
                 productLabel: 'ALO',
                 productName: 'High-Waist Airbrush Legging',
                 productAmount: '82.00',
@@ -41,7 +41,7 @@ class HumansProducts extends StatelessWidget {
               ProductCard(
                 productLabel: 'MEJURI',
                 productName: 'Single Colored Mini Hoop',
-                productImage: 'assets/images/hoop.jpg',
+                productImage: 'assets/images/hoop.png',
                 productAmount: '60.00',
               ),
               ProductCard(

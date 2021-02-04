@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:syed/helpers/config_size.dart';
+import 'package:provider/provider.dart';
 import 'package:syed/helpers/theme.dart';
+import 'package:syed/providers/shopping_bag_provider.dart';
 import 'package:syed/routes.dart';
 
-void main() {
-  runApp(MyApp());
+main(List<String> args) {
+  return runApp(
+    MultiProvider(
+      providers: [
+        Provider<ShoppingBagProvider>(create: (_) => ShoppingBagProvider())
+      ],
+      child: ShopApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class ShopApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:syed/helpers/spacer.dart';
 import 'package:syed/widgets/cards/product_card.dart';
 import 'package:syed/widgets/titles/section_title.dart';
 
@@ -33,7 +32,7 @@ class HealthProducts extends StatelessWidget {
             shrinkWrap: true,
             children: [
               ProductCard(
-                productImage: 'assets/images/mirror.jpeg',
+                productImage: 'assets/images/mirror.png',
                 productLabel: 'MIRROR',
                 productName: 'The Mirror',
                 productAmount: '1495.00',
@@ -47,7 +46,7 @@ class HealthProducts extends StatelessWidget {
               ProductCard(
                 productLabel: 'DUMBELL',
                 productName: 'The Dumbell',
-                productImage: 'assets/images/dumbell.jpg',
+                productImage: 'assets/images/dumbell.png',
                 productAmount: '109.99',
               ),
             ],

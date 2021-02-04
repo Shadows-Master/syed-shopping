@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syed/helpers/spacer.dart';
+import 'package:syed/screens/home_living_product_screen.dart';
 import 'package:syed/widgets/cards/product_card.dart';
 import 'package:syed/widgets/titles/section_title.dart';
 
@@ -31,16 +32,25 @@ class HomeLivingProducts extends StatelessWidget {
             padding: EdgeInsets.only(left: 10),
             shrinkWrap: true,
             children: [
-              ProductCard(
-                productLabel: 'W&P PORTER',
-                productName: 'Glass Bottle',
-                productImage: 'assets/images/porter.jpg',
-                productAmount: '35.00',
+              InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (BuildContext context) =>
+                          HomeLivingProductScreen());
+                },
+                child: ProductCard(
+                  productLabel: 'W&P PORTER',
+                  productName: 'Glass Bottle',
+                  productImage: 'assets/images/porter.png',
+                  productAmount: '35.00',
+                ),
               ),
               ProductCard(
                 productLabel: 'POKETO',
                 productName: 'Concept Planner',
-                productImage: 'assets/images/planner.jpg',
+                productImage: 'assets/images/planner.png',
                 productAmount: '34.00',
               ),
             ],

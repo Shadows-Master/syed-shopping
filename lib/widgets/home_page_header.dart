@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:syed/helpers/constants.dart';
 import 'package:syed/helpers/spacer.dart';
 
@@ -20,18 +21,37 @@ class HomePageHeader extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Your Shop',
-                softWrap: true,
-                style: TextStyle(
-                    fontSize: fontSize(size: 30),
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
+              Stack(
+                children: [
+                  Text(
+                    'Your Shop',
+                    softWrap: true,
+                    style: TextStyle(
+                      fontSize: fontSize(size: 30),
+                      fontWeight: FontWeight.w900,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..color = kAccentColor
+                        ..strokeWidth = 1.1,
+                    ),
+                  ),
+                  Text(
+                    'Your Shop',
+                    softWrap: true,
+                    style: TextStyle(
+                        fontSize: fontSize(size: 30),
+                        color: kAccentColor,
+                        fontWeight: FontWeight.w900),
+                  ),
+                ],
               ),
-              Text(
-                'Delivered in 2 hours',
-                softWrap: true,
-                style: TextStyle(fontSize: fontSize(size: 11)),
+              Padding(
+                padding: EdgeInsets.only(left: 4.5),
+                child: Text(
+                  'Delivered in 2 hours',
+                  softWrap: true,
+                  style: TextStyle(fontSize: fontSize(size: 11)),
+                ),
               )
             ],
           ),

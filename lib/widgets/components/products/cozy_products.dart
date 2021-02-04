@@ -33,7 +33,7 @@ class CozyProducts extends StatelessWidget {
             shrinkWrap: true,
             children: [
               ProductCard(
-                productImage: 'assets/images/nappers.jpg',
+                productImage: 'assets/images/nappers.png',
                 productLabel: 'BEARABY',
                 productName: 'Cotton Napper',
                 productAmount: '249.00',
@@ -41,13 +41,13 @@ class CozyProducts extends StatelessWidget {
               ProductCard(
                 productLabel: 'PARACHUTE',
                 productName: 'Waffle Robe',
-                productImage: 'assets/images/robe.jpg',
+                productImage: 'assets/images/robe.png',
                 productAmount: '119.00',
               ),
               ProductCard(
                 productLabel: 'KITCHEN',
                 productName: 'Waffle Kitchen',
-                productImage: 'assets/images/waffle.jpg',
+                productImage: 'assets/images/waffle.png',
                 productAmount: '59.99',
               ),
             ],

@@ -33,7 +33,7 @@ class FastAfProducts extends StatelessWidget {
             shrinkWrap: true,
             children: [
               ProductCard(
-                productImage: 'assets/images/masks.jpg',
+                productImage: 'assets/images/masks.png',
                 productLabel: 'CARAA',
                 productName: 'Universal Mask',
                 productAmount: '5.00',
@@ -41,13 +41,13 @@ class FastAfProducts extends StatelessWidget {
               ProductCard(
                 productLabel: 'EVERLANE',
                 productName: 'Tie Dye Face Mask',
-                productImage: 'assets/images/dye.jpeg',
+                productImage: 'assets/images/dye.png',
                 productAmount: '5.00',
               ),
               ProductCard(
                 productLabel: 'EVERLANE',
                 productName: 'Human Mask',
-                productImage: 'assets/images/browndye .jpg',
+                productImage: 'assets/images/browndye.png',
                 productAmount: '9.99',
               ),
             ],

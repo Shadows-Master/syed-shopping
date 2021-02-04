@@ -37,12 +37,12 @@ class FitnessProducts extends StatelessWidget {
             children: [
               ProductCard(
                 productLabel: 'DUMBELL',
-                productName: 'Dumbells',
-                productImage: 'assets/images/dumbell.jpg',
+                productName: 'Dumbell',
+                productImage: 'assets/images/dumbell.png',
                 productAmount: '59.99',
               ),
               ProductCard(
-                productImage: 'assets/images/yoga.jpg',
+                productImage: 'assets/images/yoga.png',
                 productLabel: 'ALO',
                 productName: 'Uplifting Yoga Block',
                 productAmount: '24.00',
@@ -50,7 +50,7 @@ class FitnessProducts extends StatelessWidget {
               ProductCard(
                 productLabel: 'HIGHER DOSE',
                 productName: 'Infrared Sauna Blanket V3',
-                productImage: 'assets/images/sauna.jpg',
+                productImage: 'assets/images/sauna.png',
                 productAmount: '499.00',
               ),
             ],

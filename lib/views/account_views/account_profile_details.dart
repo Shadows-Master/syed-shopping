@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:syed/helpers/constants.dart';
+import 'package:syed/widgets/components/accounts/account_placeholder.dart';
 
-class AccountProfileDetails extends StatelessWidget {
+class AccountProfileDetails extends StatefulWidget {
   const AccountProfileDetails({
     Key key,
     @required String mTitle,
@@ -15,6 +16,12 @@ class AccountProfileDetails extends StatelessWidget {
   final String _mContentTitle;
 
   @override
+  _AccountProfileDetailsState createState() => _AccountProfileDetailsState();
+}
+
+class _AccountProfileDetailsState extends State<AccountProfileDetails> {
+  final String _mRoutePageName = "/user/account-details";
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -23,41 +30,16 @@ class AccountProfileDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            _mTitle,
+            widget._mTitle,
             softWrap: true,
             style: TextStyle(
                 color: kAccentColor,
                 fontSize: fontSize(size: 17),
                 fontWeight: FontWeight.w700),
           ),
-          Container(
-            height: 60,
-            margin: EdgeInsets.only(top: 13),
-            decoration: BoxDecoration(
-                border: Border(
-                    top: BorderSide(
-                        width: 1.2, color: kTextColor.withOpacity(.1)),
-                    bottom: BorderSide(
-                        width: 1.2, color: kTextColor.withOpacity(.1)))),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  _mContentTitle,
-                  softWrap: true,
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: fontSize(size: 17),
-                      fontWeight: FontWeight.w700),
-                ),
-                Icon(
-                  SimpleLineIcons.arrow_right,
-                  color: Colors.black,
-                  size: 13,
-                )
-              ],
-            ),
-          )
+          AccountPlaceholder(
+              mRoutePageName: _mRoutePageName,
+              mContentTitle: widget._mContentTitle)
         ],
       ),
     );

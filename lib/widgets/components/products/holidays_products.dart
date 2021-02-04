@@ -38,13 +38,13 @@ class HolidaysProducts extends StatelessWidget {
               ProductCard(
                 productLabel: 'GREAT JONES',
                 productName: 'The Dutchess',
-                productImage: 'assets/images/dutchess.jpeg',
+                productImage: 'assets/images/dutchess.png',
                 productAmount: '155.00',
               ),
               ProductCard(
                 productLabel: 'NINTENDO',
                 productName: 'Nintendo Switch - Neon Console',
-                productImage: 'assets/images/nintendo.jpg',
+                productImage: 'assets/images/nintendo.png',
                 productAmount: '299.99',
               ),
             ],

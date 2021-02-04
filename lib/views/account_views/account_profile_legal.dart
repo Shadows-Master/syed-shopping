@@ -71,7 +71,7 @@ class LegalContents extends StatelessWidget {
             style: TextStyle(
                 color: kTextColor,
                 fontSize: fontSize(size: 17),
-                fontWeight: FontWeight.w700),
+                fontWeight: FontWeight.w600),
           ),
           Icon(
             SimpleLineIcons.arrow_right,

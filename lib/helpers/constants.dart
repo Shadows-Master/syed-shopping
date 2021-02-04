@@ -7,7 +7,7 @@ import 'config_size.dart';
 const kPrimaryColor = Color(0xFF1F58a8);
 const kSecondaryColor = Color(0xFFE3EFFC);
 const kAccentColor = Color(0xFF161e28);
-const kPrimaryLightColor = Color(0xFF085782);
+const kPrimaryLightColor = Colors.pinkAccent;
 const kPrimaryBbnColor = Color.fromRGBO(60, 60, 60, 1);
 const kPrimaryCardColor = Color(0xFFCCCCCC);
 
@@ -70,3 +70,12 @@ vertical({double size}) => getProportionateScreenHeight(size);
 height({double size}) => getProportionateScreenHeight(size);
 top({double size}) => getProportionateScreenHeight(size);
 bottom({double size}) => getProportionateScreenHeight(size);
+
+const String productDescription =
+    "The fastest, most powerful Xbox ever. Experience true 4K gaming, faster load times, increased inventory, "
+    "Smart Delivery and backwards compatible with thousands of games, Includes an AC power adapter and an Xbox "
+    "wireless controller in carbon black.";
+
+const String description =
+    "Hydration never looked so sleek. This reusable water bottle is made with durable, yet "
+    "lightweight glass and wrapped in matte silicone. Plus, it's dishwasher safe. Size:9.3\" x 2.75\" x 2.75\" . 20 oz";

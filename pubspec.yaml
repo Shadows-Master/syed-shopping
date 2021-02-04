@@ -33,7 +33,7 @@ dependencies:
   flutter_skeleton: ^0.1.0+1
   shared_preferences: ^0.5.12+4
   flutter_vector_icons: ^0.2.1
-  get_it: ^5.0.4
+  get_it: ^5.0.6
   device_preview: ^0.5.5
   flutter_spinkit: ^4.1.2+1
   url_launcher: ^5.7.10
@@ -44,9 +44,12 @@ dependencies:
   flutter_svg:
   line_icons: ^0.2.0
   cached_network_image: ^2.5.0
-  percent_indicator: ^2.1.9
+  percent_indicator: ^2.1.9+1
   google_fonts: ^1.1.2
   getwidget: ^1.2.4
+  flushbar: ^1.10.4
+  animated_text_kit: ^3.1.0
+  auto_animated_icon: ^1.1.4
 
 dev_dependencies:
   flutter_test:

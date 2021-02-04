@@ -29,17 +29,19 @@ class ProductCard extends StatelessWidget {
             height: 200,
             padding: EdgeInsets.all(100),
             decoration: BoxDecoration(
+                color: Colors.grey.shade100,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(1), topRight: Radius.circular(1)),
+                    topLeft: Radius.circular(14),
+                    topRight: Radius.circular(14)),
                 image: DecorationImage(
                     image:
                         AssetImage(productImage ?? 'assets/images/stone.png'),
-                    fit: BoxFit.cover)),
+                    fit: BoxFit.scaleDown)),
           ),
           Container(
             height: 100,
             width: 200,
-            padding: EdgeInsets.only(left: 15),
+            padding: EdgeInsets.only(left: 5),
             color: Colors.white,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
