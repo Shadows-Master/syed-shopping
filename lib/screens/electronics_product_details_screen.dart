@@ -38,14 +38,14 @@ class _ElectronicsProductDetailsScreenState
                     mPrice: _mPrice,
                     mDescription: _mDescription),
                 Positioned(
-                  top: 30,
+                  top: 40,
                   left: 20,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(20),
                     onTap: () => Navigator.of(context).pop(),
                     child: CircleAvatar(
                       backgroundColor: kAccentColor,
-                      radius: 20,
+                      radius: 15,
                       child: Icon(
                         Icons.close,
                         color: Colors.white,

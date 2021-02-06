@@ -17,7 +17,8 @@ class HomeLivingProductScreen extends StatefulWidget {
       _HomeLivingProductScreenState();
 }
 
-class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
+class _HomeLivingProductScreenState
+    extends State<HomeLivingProductScreen>
     with SingleTickerProviderStateMixin {
   PageController _mSlideProductPageController;
   AnimationController _animationController;
@@ -29,7 +30,8 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
   final int _mProductLimit = 1;
   int _mProductIndex = 1;
   final String _mSign = '-';
-  final GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _globalKey =
+      GlobalKey<ScaffoldState>();
   Product _product = Product();
 
   final String _mLabel = "W&P PORTER";
@@ -83,13 +85,15 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
   @override
   void initState() {
     _mSlideProductPageController = PageController(
-        initialPage: _mSlideIndex, viewportFraction: 1, keepPage: true);
+        initialPage: _mSlideIndex,
+        viewportFraction: 1,
+        keepPage: true);
     _animationController = AnimationController(
       duration: Duration(seconds: 8),
       vsync: this,
     );
-    _animation = Tween(begin: -1.0, end: 1.0).animate(
-        CurvedAnimation(parent: _animationController, curve: Curves.easeIn));
+    _animation = Tween(begin: -1.0, end: 1.0).animate(CurvedAnimation(
+        parent: _animationController, curve: Curves.easeIn));
     _animationController.forward();
     super.initState();
   }
@@ -118,7 +122,8 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                                 height: 300,
                                 padding: EdgeInsets.only(top: 35),
                                 child: PageView(
-                                  controller: _mSlideProductPageController,
+                                  controller:
+                                      _mSlideProductPageController,
                                   onPageChanged: (mPage) {
                                     setState(() {
                                       _mSlideIndex = mPage;
@@ -130,11 +135,14 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                             ),
                             Expanded(
                               child: Container(
-                                margin: EdgeInsets.only(left: 25, top: 15),
+                                margin: EdgeInsets.only(
+                                    left: 25, top: 15),
                                 child: Row(
                                   children: [
-                                    ...List.generate(_mElements.length,
-                                        (index) => paginateImage(index: index))
+                                    ...List.generate(
+                                        _mElements.length,
+                                        (index) => paginateImage(
+                                            index: index))
                                   ],
                                 ),
                               ),
@@ -146,7 +154,8 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         margin: EdgeInsets.symmetric(vertical: 25),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment:
+                              CrossAxisAlignment.start,
                           children: [
                             Text(
                               _mLabel,
@@ -213,22 +222,27 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         margin: EdgeInsets.only(top: 20),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment:
+                              MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
                               child: Container(
                                 height: 60,
                                 width: 135,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius:
+                                        BorderRadius.circular(8),
                                     border: Border.all(
-                                        color: kTextColor.withOpacity(.5),
+                                        color: kTextColor
+                                            .withOpacity(.5),
                                         width: 1.0)),
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 20),
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 20),
                                   child: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment
+                                            .spaceBetween,
                                     children: [
                                       Operator(
                                         mSign: _mSign,
@@ -249,8 +263,10 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                                         '$_mProductIndex',
                                         style: TextStyle(
                                             color: kAccentColor,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: fontSize(size: 17)),
+                                            fontWeight:
+                                                FontWeight.w700,
+                                            fontSize:
+                                                fontSize(size: 17)),
                                       ),
                                       Operator(
                                         mSign: '+',
@@ -275,7 +291,8 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                                   height: 60,
                                   child: RaisedButton(
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(8)),
+                                        borderRadius:
+                                            BorderRadius.circular(8)),
                                     color: (!_mBtnColorChanged)
                                         ? kPrimaryColor
                                         : kAccentColor,
@@ -286,85 +303,100 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                                         (_isLoading)
                                             ? CircularPercentIndicator(
                                                 radius: 25,
-                                                animationDuration: 1500,
+                                                animationDuration:
+                                                    1500,
                                                 animation: true,
                                                 lineWidth: 2,
                                                 percent: 1.0,
-                                                progressColor: Colors.white,
+                                                progressColor:
+                                                    Colors.white,
                                               )
                                             : Text(''),
                                         SpacerWidth(
-                                            size: (_isLoading) ? 25 : 0),
+                                            size: (_isLoading)
+                                                ? 25
+                                                : 0),
                                         (!_mBtnColorChanged)
                                             ? Text(
                                                 'Add to Bag',
                                                 softWrap: true,
-                                                textAlign: TextAlign.center,
+                                                textAlign:
+                                                    TextAlign.center,
                                                 style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w800,
+                                                    color: Colors
+                                                        .white,
+                                                    fontWeight:
+                                                        FontWeight
+                                                            .w800,
                                                     fontSize:
-                                                        fontSize(size: 18)),
+                                                        fontSize(
+                                                            size:
+                                                                18)),
                                               )
                                             : AnimatedBuilder(
-                                                animation: _animationController,
-                                                builder: (context, child) =>
-                                                    Transform(
-                                                      transform: Matrix4
-                                                          .translationValues(
+                                                animation:
+                                                    _animationController,
+                                                builder:
+                                                    (context,
+                                                            child) =>
+                                                        Transform(
+                                                          transform: Matrix4.translationValues(
                                                               0,
-                                                              -_animation.value,
+                                                              -_animation
+                                                                  .value,
                                                               0),
-                                                      child: Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Icon(
-                                                            SimpleLineIcons
-                                                                .check,
-                                                            color: Colors.white,
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                SimpleLineIcons
+                                                                    .check,
+                                                                color:
+                                                                    Colors.white,
+                                                              ),
+                                                              SpacerWidth(
+                                                                size:
+                                                                    5,
+                                                              ),
+                                                              Text(
+                                                                'Added to Bag',
+                                                                softWrap:
+                                                                    true,
+                                                                textAlign:
+                                                                    TextAlign.center,
+                                                                style: TextStyle(
+                                                                    color: Colors.white,
+                                                                    fontWeight: FontWeight.w800,
+                                                                    fontSize: fontSize(size: 18)),
+                                                              ),
+                                                            ],
                                                           ),
-                                                          SpacerWidth(
-                                                            size: 5,
-                                                          ),
-                                                          Text(
-                                                            'Added to Bag',
-                                                            softWrap: true,
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .white,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w800,
-                                                                fontSize:
-                                                                    fontSize(
-                                                                        size:
-                                                                            18)),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ))
+                                                        ))
                                       ],
                                     ),
                                     onPressed: () {
+                                      _product = Product(
+                                          name: 'Glass Bottle',
+                                          colorCode: 'Blush',
+                                          image:
+                                              'assets/images/porter.png',
+                                          quantity: 1,
+                                          price: '35.00',
+                                          category: 'W&P PORTER');
+                                      Provider.of<ShoppingBagProvider>(
+                                              context,
+                                              listen: false)
+                                          .addProductToBag(_product);
                                       setState(() {
                                         _isLoading = true;
-                                        _product = Product(
-                                            name: 'Glass Bottle',
-                                            colorCode: 'Blush',
-                                            image: 'assets/images/porter.png',
-                                            quantity: 1,
-                                            price: '35.00',
-                                            category: 'W&P PORTER');
                                       });
-                                      context
-                                          .read<ShoppingBagProvider>()
-                                          .addProductToBag(_product);
+
                                       Future.delayed(
-                                          Duration(milliseconds: 1200), () {
+                                          Duration(
+                                              milliseconds: 1000),
+                                          () {
                                         _isLoading = false;
                                         _mBtnColorChanged = true;
                                         setState(() {});
@@ -445,7 +477,8 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                     backgroundColor: Color(int.parse(_mColorCode)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Icon(
                       (_isOpen)
                           ? SimpleLineIcons.arrow_up
@@ -486,13 +519,14 @@ class _HomeLivingProductScreenState extends State<HomeLivingProductScreen>
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                  width:
-                                      (mColorList[index].available) ? 2.5 : 0,
+                                  width: (mColorList[index].available)
+                                      ? 2.5
+                                      : 0,
                                   color: (mColorList[index].available)
                                       ? kAccentColor
                                       : Colors.transparent),
-                              color: Color(
-                                  int.parse(mColorList[index].codeColor))),
+                              color: Color(int.parse(
+                                  mColorList[index].codeColor))),
                         ),
                         (!mColorList[index].available)
                             ? NotAvailableProduct()
@@ -558,7 +592,8 @@ class NotAvailableProduct extends StatelessWidget {
           height: 50,
           width: 50,
           decoration: BoxDecoration(
-              shape: BoxShape.circle, color: Color(0xFFF0ECEC).withOpacity(.5)),
+              shape: BoxShape.circle,
+              color: Color(0xFFF0ECEC).withOpacity(.5)),
         ),
         Positioned(
           top: -20,

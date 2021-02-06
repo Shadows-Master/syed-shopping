@@ -9,7 +9,8 @@ main(List<String> args) {
   return runApp(
     MultiProvider(
       providers: [
-        Provider<ShoppingBagProvider>(create: (_) => ShoppingBagProvider())
+        ChangeNotifierProvider<ShoppingBagProvider>(
+            create: (_) => ShoppingBagProvider())
       ],
       child: ShopApp(),
     ),
@@ -23,8 +24,8 @@ class ShopApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark,
-      statusBarBrightness:
-          Brightness.light, //status bar brightness//status barIcon Brightness
+      statusBarBrightness: Brightness
+          .light, //status bar brightness//status barIcon Brightness
     ));
     return MaterialApp(
       theme: theme(),

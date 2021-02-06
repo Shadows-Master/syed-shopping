@@ -5,8 +5,11 @@ import 'package:provider/provider.dart';
 import 'package:syed/core/Product.dart';
 import 'package:syed/helpers/config_size.dart';
 import 'package:syed/helpers/constants.dart';
-import 'package:syed/helpers/spacer.dart';
 import 'package:syed/providers/shopping_bag_provider.dart';
+import 'package:syed/screens/windows_times_screen.dart';
+import 'package:syed/widgets/buttons/loader_btn.dart';
+import 'package:syed/widgets/components/box/empty_box.dart';
+import 'package:syed/widgets/components/shopping_bag/shopping_bag_product_details.dart';
 
 class ShoppingBagPageView extends StatefulWidget {
   @override
@@ -17,13 +20,10 @@ class ShoppingBagPageView extends StatefulWidget {
 class _ShoppingBagPageViewState extends State<ShoppingBagPageView> {
   List<Product> mProductList = [];
   bool _isWindowChoosed = false;
+  final String _mDefaultButtonText = "Choose Delivery Window";
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read<ShoppingBagProvider>();
-      setState(() {});
-    });
     super.initState();
   }
 
@@ -74,147 +74,7 @@ class _ShoppingBagPageViewState extends State<ShoppingBagPageView> {
                   margin: EdgeInsets.only(top: 10),
                   child: (mProductList.length == 0)
                       ? EmptyBox()
-                      : ListView.builder(
-                          itemCount: mProductList.length,
-                          itemBuilder: (context, index) {
-                            Product _mProduct = mProductList[index];
-                            return Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20),
-                              margin: EdgeInsets.only(bottom: 12),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Container(
-                                      height: 100,
-                                      width: 90,
-                                      decoration: BoxDecoration(
-                                          color: kPrimaryLightColor
-                                              .withOpacity(.05),
-                                          borderRadius:
-                                              BorderRadius.circular(
-                                                  8),
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  _mProduct.image),
-                                              fit: BoxFit.contain)),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    flex: 3,
-                                    child: Container(
-                                      padding:
-                                          EdgeInsets.only(left: 15),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            _mProduct.category,
-                                            softWrap: true,
-                                            style: TextStyle(
-                                                fontWeight:
-                                                    FontWeight.w400,
-                                                fontSize: fontSize(
-                                                    size: 12)),
-                                          ),
-                                          Text(
-                                            _mProduct.name,
-                                            softWrap: true,
-                                            style: TextStyle(
-                                                color: kAccentColor,
-                                                fontWeight:
-                                                    FontWeight.w700,
-                                                fontSize: fontSize(
-                                                    size: 17)),
-                                          ),
-                                          Text(
-                                            _mProduct.colorCode
-                                                .toUpperCase(),
-                                            softWrap: true,
-                                            style: TextStyle(
-                                                fontWeight:
-                                                    FontWeight.w400,
-                                                fontSize: fontSize(
-                                                    size: 12)),
-                                          ),
-                                          Row(
-                                            children: [
-                                              Text(
-                                                '\$${_mProduct.price}',
-                                                softWrap: true,
-                                                style: TextStyle(
-                                                    color:
-                                                        kAccentColor,
-                                                    fontWeight:
-                                                        FontWeight
-                                                            .w700,
-                                                    fontSize:
-                                                        fontSize(
-                                                            size:
-                                                                15)),
-                                              ),
-                                              Container(
-                                                margin:
-                                                    EdgeInsets.only(
-                                                        left: 105),
-                                                child: Row(
-                                                  children: [
-                                                    Text(
-                                                      'QTY',
-                                                      softWrap: true,
-                                                      style: TextStyle(
-                                                          color:
-                                                              kAccentColor,
-                                                          fontWeight:
-                                                              FontWeight
-                                                                  .w700,
-                                                          fontSize:
-                                                              fontSize(
-                                                                  size:
-                                                                      15)),
-                                                    ),
-                                                    SpacerWidth(
-                                                      size: 8,
-                                                    ),
-                                                    Text(
-                                                      '${_mProduct.quantity}',
-                                                      softWrap: true,
-                                                      style: TextStyle(
-                                                          color:
-                                                              kAccentColor,
-                                                          fontWeight:
-                                                              FontWeight
-                                                                  .w700,
-                                                          fontSize:
-                                                              fontSize(
-                                                                  size:
-                                                                      15)),
-                                                    ),
-                                                    SpacerWidth(
-                                                      size: 8,
-                                                    ),
-                                                    Icon(
-                                                      SimpleLineIcons
-                                                          .arrow_down,
-                                                      color:
-                                                          kAccentColor,
-                                                      size: 15,
-                                                    )
-                                                  ],
-                                                ),
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            );
-                          },
-                        ),
+                      : choosenProductList(),
                 ),
               ),
               (mProductList.length > 0)
@@ -286,7 +146,7 @@ class _ShoppingBagPageViewState extends State<ShoppingBagPageView> {
                               margin: EdgeInsets.only(top: 30),
                               child: ButtonTheme(
                                 minWidth: ConfigSize.screenWidth,
-                                height: 60,
+                                height: height(size: 70),
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
@@ -294,7 +154,7 @@ class _ShoppingBagPageViewState extends State<ShoppingBagPageView> {
                                   color: kPrimaryColor,
                                   child: (!_isWindowChoosed)
                                       ? Text(
-                                          'Choose Delivery Window',
+                                          _mDefaultButtonText,
                                           softWrap: true,
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
@@ -304,14 +164,7 @@ class _ShoppingBagPageViewState extends State<ShoppingBagPageView> {
                                               fontSize:
                                                   fontSize(size: 16)),
                                         )
-                                      : CircularPercentIndicator(
-                                          radius: 25,
-                                          animationDuration: 1500,
-                                          animation: true,
-                                          lineWidth: 2,
-                                          percent: 1.0,
-                                          progressColor: Colors.white,
-                                        ),
+                                      : LoaderButton(),
                                   onPressed: () {
                                     setState(() {
                                       _isWindowChoosed = true;
@@ -319,83 +172,17 @@ class _ShoppingBagPageViewState extends State<ShoppingBagPageView> {
                                     Future.delayed(
                                         Duration(milliseconds: 1200),
                                         () {
+                                      setState(() {
+                                        _isWindowChoosed = false;
+                                      });
                                       showModalBottomSheet(
                                           context: context,
                                           isScrollControlled: true,
+                                          backgroundColor:
+                                              Colors.transparent,
                                           builder: (BuildContext
                                                   context) =>
-                                              ClipRRect(
-                                                  borderRadius: BorderRadius.only(
-                                                      topLeft: Radius
-                                                          .circular(
-                                                              30),
-                                                      topRight: Radius
-                                                          .circular(
-                                                              30)),
-                                                  child: Container(
-                                                    padding: EdgeInsets
-                                                        .symmetric(
-                                                            horizontal:
-                                                                20),
-                                                    margin: EdgeInsets
-                                                        .only(
-                                                            top: 20),
-                                                    child: Column(
-                                                      children: [
-                                                        Text(
-                                                          'Select Your Delivery Time',
-                                                          softWrap:
-                                                              true,
-                                                          style: TextStyle(
-                                                              color:
-                                                                  kAccentColor,
-                                                              fontSize: fontSize(
-                                                                  size:
-                                                                      11),
-                                                              fontWeight:
-                                                                  FontWeight.w900),
-                                                        ),
-                                                        ListView(
-                                                          shrinkWrap:
-                                                              true,
-                                                          children: [
-                                                            Container(
-                                                              decoration: BoxDecoration(
-                                                                  color:
-                                                                      kTextColor.withOpacity(.1),
-                                                                  borderRadius: BorderRadius.circular(8)),
-                                                              child:
-                                                                  Column(
-                                                                children: [
-                                                                  Text(
-                                                                    'Today',
-                                                                    softWrap: true,
-                                                                    style: TextStyle(fontSize: fontSize(size: 11), fontWeight: FontWeight.w500),
-                                                                  ),
-                                                                  Container(
-                                                                    child: Row(
-                                                                      children: [
-                                                                        Container(
-                                                                          child: Row(
-                                                                            children: [],
-                                                                          ),
-                                                                        ),
-                                                                        Icon(
-                                                                          SimpleLineIcons.check,
-                                                                          color: Colors.white,
-                                                                          size: 19,
-                                                                        )
-                                                                      ],
-                                                                    ),
-                                                                  )
-                                                                ],
-                                                              ),
-                                                            )
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  )));
+                                              WindowsTimesScreen());
                                     });
                                   },
                                 ),
@@ -412,37 +199,80 @@ class _ShoppingBagPageViewState extends State<ShoppingBagPageView> {
       ),
     );
   }
-}
 
-class EmptyBox extends StatelessWidget {
-  const EmptyBox({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          'Your Bag is Empty',
-          softWrap: true,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: kAccentColor,
-              fontSize: 23),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Text(
-            "When you add products to your order they'll show up here.",
-            softWrap: true,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 15),
+  ListView choosenProductList() {
+    return ListView.builder(
+      itemCount: mProductList.length,
+      itemBuilder: (context, index) {
+        Product _mProduct = mProductList[index];
+        return Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          margin: EdgeInsets.only(bottom: 12),
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  height: 100,
+                  width: 90,
+                  decoration: BoxDecoration(
+                      color: kPrimaryLightColor.withOpacity(.05),
+                      borderRadius: BorderRadius.circular(8),
+                      image: DecorationImage(
+                          image: AssetImage(_mProduct.image),
+                          fit: BoxFit.contain)),
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        _mProduct.category,
+                        softWrap: true,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: fontSize(size: 12)),
+                      ),
+                      Text(
+                        _mProduct.name,
+                        softWrap: true,
+                        style: TextStyle(
+                            color: kAccentColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: fontSize(size: 17)),
+                      ),
+                      Text(
+                        _mProduct.colorCode.toUpperCase(),
+                        softWrap: true,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: fontSize(size: 12)),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '\$${_mProduct.price}',
+                            softWrap: true,
+                            style: TextStyle(
+                                color: kAccentColor,
+                                fontWeight: FontWeight.w700,
+                                fontSize: fontSize(size: 15)),
+                          ),
+                          ShoppingBagProductDetails(
+                              mProduct: _mProduct)
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
           ),
-        ),
-      ],
+        );
+      },
     );
   }
 }
